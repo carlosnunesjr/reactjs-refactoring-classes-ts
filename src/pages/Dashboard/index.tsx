@@ -75,7 +75,7 @@ export function Dashboard() {
 
   const handleEditFood = (food: FoodInput) => {
     setEditingFood(food);
-    setModalOpen(true);
+    setEditModalOpen(true);
   };
 
   return (

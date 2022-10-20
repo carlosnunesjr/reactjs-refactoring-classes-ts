@@ -22,7 +22,7 @@ export function Input({ name, Icon, ...rest }: InputProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
-  const { fieldName, defaultValue, registerField } = useField(name);
+  const { fieldName, defaultValue = "", registerField } = useField(name);
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
@@ -40,7 +40,7 @@ export function Input({ name, Icon, ...rest }: InputProps) {
       ref: inputRef.current,
       path: "value"
     });
-  }, [fieldName, registerField]);
+  }, [fieldName, registerField, defaultValue]);
 
   return (
     <Container isFilled={isFilled} isFocused={isFocused}>

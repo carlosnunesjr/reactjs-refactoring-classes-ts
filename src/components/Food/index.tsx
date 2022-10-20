@@ -40,7 +40,6 @@ export function Food({
   };
 
   const setEditingFood = () => {
-    console.log("setEditingFood", food);
     handleEditFood(food);
   };
 
@@ -53,7 +52,12 @@ export function Food({
         <h2>{food.name}</h2>
         <p>{food.description}</p>
         <p className="price">
-          R$ <b>{food.price}</b>
+          <b>
+            {Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL"
+            }).format(food.price)}
+          </b>
         </p>
       </section>
       <section className="footer">
